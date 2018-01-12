@@ -1,0 +1,8 @@
+out
+done
+err
+empty
+test
+mixpanel-info.js
+*.log
+*.json
