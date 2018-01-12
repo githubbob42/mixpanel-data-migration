@@ -11,10 +11,6 @@ var mpInfo = require('./mixpanel-info');
 
 var debug = false;
 
-var years = range.range(2014, 2018);
-var months = range.range(1, 13);
-var runSingleDay = null;
-
 function printUsage() {
   console.log('\033[0;36m', 'Usage: migrate_data.js  [year [month [day]]]\n'  , '\033[0m' );
   console.log('\033[0;36m', '              /? : prints help'  , '\033[0m' );
@@ -25,6 +21,10 @@ function printUsage() {
   console.log('\033[0m', ' (only do this when you are ready to migrate ALL DATA and you know everything works)\n'  , '\033[0m' );
 
 }
+
+var years = range.range(2014, 2018);
+var months = range.range(1, 13);
+var runSingleDay = null;
 
 if (process.argv.length === 2) {
   printUsage();
@@ -47,6 +47,9 @@ if (process.argv.length > 2) {
       if (years.toString() === '/?') {
         printUsage();
         process.exit(0);
+      }
+      if (years.toString() === 'all') {
+        years = range.range(2014, 2018);
       }
   }
 

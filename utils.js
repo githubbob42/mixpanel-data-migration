@@ -50,7 +50,7 @@ exports.pad = function(n) {
 }
 
 exports.showProgress = function(idx) {
-  process.stdout.write((idx).toString());
+  process.stdout.write((idx+1).toString());
   for(var x=0; x < (idx).toString().length; x++) {
     process.stdout.write("\b");
   }
